@@ -1,3 +1,6 @@
+import java.util.stream.IntStream;
+
+
 public class MoreLoopFun {
     public static void main(String[] args) {
         /*
@@ -20,22 +23,17 @@ public class MoreLoopFun {
 
         //write a for loop that sums the numbers from 1 to 10
         int total = 0;
+        for(int i : IntStream.range(1, 11).toArray()) {
+            total+=i;
+        }
+        System.out.println(total);
 
         ////////////////////////////////////////////////////
         //for loops compared to while loops////////////////
         //////////////////////////////////////////////////
 
-        for(int num = 1; num <= 5; num++){
-            System.out.println(num);
+        for(int i : IntStream.range(0, 11).map((n) -> (int) Math.pow(2, n)).toArray()) {
+            System.out.println(i);
         }
-        System.out.println("Finished!");
-
-        int num = 1;
-        while(num <= 5){
-            System.out.println(num);
-            num++;
-        }
-        System.out.println("Finished!");
-
     }
 }
